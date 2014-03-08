@@ -38,8 +38,10 @@ gChart.draw(gTable, gchartOptions);
 //2) Load the Google visualization library from Google Fusion tables using an SQL query
 // We replace the JSON filename in our .get function with the dataset URL
 function gloadData(){
+
+//7) Add a 'WHERE' clause to the SQL query to filter the data, then paste new URL into .get function
 	
-$.get("https://www.googleapis.com/fusiontables/v1/query/?sql=SELECT+*+FROM+153u1bOCk0rHRiH7hMshhuNqv_rozzMnMvn_2hRyc&key=AIzaSyCzc9XKi4CG-PcqBZfHBmc3fKmuq3JH9vU", mloadData , "json");
+$.get("https://www.googleapis.com/fusiontables/v1/query/?sql=SELECT+*+FROM+153u1bOCk0rHRiH7hMshhuNqv_rozzMnMvn_2hRyc+WHERE+DATE>='1992-01-01'&key=AIzaSyCzc9XKi4CG-PcqBZfHBmc3fKmuq3JH9vU", mloadData , "json");
 
 }
 
