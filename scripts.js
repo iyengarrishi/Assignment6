@@ -20,19 +20,15 @@ function mloadData(GDPDATA){
 	console.log(GDPDATA);
 }
 
-var mHeader = GDPDATA.columns;
-
 //4) I will now add my datatable to the visualization using the Google Viz API
 
-
 var gTable = new google.visualization.DataTable();
-// The first parameter is the datatype in the column, the second is the name of the column
-data.addColumn('string', 'DATE');
-data.addColumn('number', 'VALUE');
-data.addRows(GDPDATA.rows);
+gTable.addColumn('string', GDPDATA.columns[0]);
+gTable.addColumn('number', GDPDATA.columns[1]);
+gTable.addRows(GDPDATA.rows);
 
-/* 
 
+/*
 	var dataHere = google.visualization.arrayToDataTable(ideserveArrays);
 
  	
